@@ -40,7 +40,7 @@ app.post('/products', (request, response) => {
   return response.json(product)
 })
 
-app.put('/products', (request, response) => {
+app.put('/products/:id', (request, response) => {
   const { id } = request.params
   const { name, price} = request.body
 
@@ -58,7 +58,7 @@ app.put('/products', (request, response) => {
   })
 })
 
-app.delete('/products', (request, response) => {
+app.delete('/products/:id', (request, response) => {
   const { id } = request.params
 
   const productIndex = products.findIndex(product => product.id === id)
